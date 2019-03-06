@@ -127,7 +127,7 @@ All the examples above are replicated using the UMD version in the `examples` fo
         uiSchema: [{
           component: 'input',
           model: 'firstName',
-          // Same API as [Vue's render functions](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth)
+          // Same API as Vue's render functions: https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth
           fieldOptions: {
             class: ['form-control'],
             on: ['input'],
@@ -163,11 +163,6 @@ Tested with v2.5.9 but will probably work on any version >= v2.4.0
 ### TODO
 
 * Write tests
-* ~~Add i18n support~~
-  * Added in 1.15.2 with `options.ajv.locale` setting
-* ~~Write this README~~
 * Use Ajv internally to validate:
   * `vfs-global` prop `ui-schema`
   * `vfs-component` prop `ui-schema`
-* ~~Write docs~~
-* ~~Publish with Gitbook~~
