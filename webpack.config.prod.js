@@ -14,6 +14,11 @@ const production = {
 
 module.exports = [
   merge(common, production, {
+    externals: [
+      nodeExternals({
+        whitelist: ['ajv'],
+      }),
+    ],
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'vue-form-json-schema.umd.js',
