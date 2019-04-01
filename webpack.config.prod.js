@@ -1,6 +1,5 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const nodeExternals = require('webpack-node-externals');
 const common = require('./webpack.config.common');
 
 const production = {
@@ -14,11 +13,7 @@ const production = {
 
 module.exports = [
   merge(common, production, {
-    externals: [
-      nodeExternals({
-        whitelist: ['ajv'],
-      }),
-    ],
+    externals: ['vue'],
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'vue-form-json-schema.umd.js',
@@ -28,7 +23,7 @@ module.exports = [
     },
   }),
   merge(common, production, {
-    externals: [nodeExternals()],
+    externals: ['ajv', 'vue'],
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'vue-form-json-schema.esm.js',
