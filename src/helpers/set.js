@@ -1,5 +1,3 @@
-import get from './get';
-
 const set = (obj, path, value) => {
   if (typeof path === 'number') {
     path = [path];
@@ -14,13 +12,10 @@ const set = (obj, path, value) => {
   }
 
   const key = path[0];
-  const currentValue = get(obj, key);
+  const currentValue = obj[key];
   if (path.length === 1) {
-    if (typeof currentValue === 'undefined') {
-      obj[key] = value;
-    }
-
-    return currentValue;
+    obj[key] = value;
+    return obj;
   }
 
   if (typeof currentValue === 'undefined') {
