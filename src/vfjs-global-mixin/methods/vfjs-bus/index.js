@@ -1,4 +1,4 @@
-import Minibus from 'minibus';
+import Vue from 'vue';
 import { isEqual, set } from '../../../helpers';
 import {
   VFJS_EVENT_FIELD_MODEL_CLEAR_HIDDEN,
@@ -189,7 +189,7 @@ const vfjsBus = {
     }
   },
   vfjsBusInitialize() {
-    this.vfjsBus = Minibus.create();
+    this.vfjsBus = new Vue();
   },
 };
 
